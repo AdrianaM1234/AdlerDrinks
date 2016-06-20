@@ -1,0 +1,128 @@
+.navbar-brand {
+    font-size: 28px;
+}
+
+.navbar-container {
+    padding: 10px 0 20px 0;
+}
+
+.navbar.navbar-fixed-top.fixed-theme {
+    background-color: #222;
+    border-color: #080808;
+    box-shadow: 0 0 5px rgba(0,0,0,.8);
+}
+
+.navbar-brand.fixed-theme {
+    font-size: 24px;
+}
+
+.navbar-container.fixed-theme {
+    padding: 0;
+}
+
+.navbar-brand.fixed-theme,
+.navbar-container.fixed-theme,
+.navbar.navbar-fixed-top.fixed-theme,
+.navbar-brand,
+.navbar-container{
+    transition: 0.8s;
+    -webkit-transition:  0.8s;
+}
+
+#navbar{
+	margin-left: 620px;
+}
+
+#msg{
+    margin-top: 250px;
+}
+
+#rsociais{
+    margin-left: -80px; 
+}
+
+#face{
+    width : 30px;
+    height: 30px;
+}
+
+#twitter{
+    width : 32px;
+    height: 32px;
+}
+
+/* Stars*/
+.stars{
+    margin-top: 560px;
+    padding: 5px 0 10px 0;
+    font-size: 8px;
+    margin-left: -10px;
+}
+
+#text{
+    font-size: 14px;
+}
+
+#rating-system{
+    display: none;
+}
+
+
+
+
+.menu{
+    margin-top: 250px;
+    margin-left: 150px;
+
+}
+.menu.nav {
+    left:50%;
+    margin-left:-150px;
+    top:50px;
+    position:absolute;
+}
+.menu.nav>li>a:hover, .menu.nav>li>a:focus, .menu.nav .open>a, .menu.nav .open>a:hover, .menu.nav .open>a:focus {
+    background:#fff;
+}
+.dropdown {
+    background:#fff;
+    border:1px solid #ccc;
+    border-radius:4px;
+    width:300px;    
+}
+.dropdown-menu>li>a {
+    color:#428bca;
+}
+.dropdown ul.dropdown-menu {
+    border-radius:4px;
+    box-shadow:none;
+    margin-top:20px;
+    width:300px;
+}
+.dropdown ul.dropdown-menu:before {
+    content: "";
+    border-bottom: 10px solid #fff;
+    border-right: 10px solid transparent;
+    border-left: 10px solid transparent;
+    position: absolute;
+    top: -10px;
+    right: 16px;
+    z-index: 10;
+}
+.dropdown ul.dropdown-menu:after {
+    content: "";
+    border-bottom: 12px solid #ccc;
+    border-right: 12px solid transparent;
+    border-left: 12px solid transparent;
+    position: absolute;
+    top: -12px;
+    right: 14px;
+    z-index: 9;
+}
+.row{
+	margin-left:15px;
+}
+
+#bb{
+	padding:2px 1px;
+}

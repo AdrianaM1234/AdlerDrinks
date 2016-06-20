@@ -1,0 +1,218 @@
+
+.wrap
+{
+    width: 100%;
+    height: 100%;
+    min-height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 99;
+}
+
+p.form-title
+{
+    font-family: 'Open Sans' , sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center;
+    color: #000000;
+    margin-top: 5%;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+}
+
+form
+{
+    width: 250px;
+    margin: 0 auto;
+}
+
+form.login input[type="text"], form.login input[type="password"], 
+form.cadastrar input[type="password"], form.cadastrar input[type="email"], form.cadastrar input[type="age"], form.cadastrar input[type="text"],
+form.configurar input[type="password"], form.configurar input[type="email"], form.configurar input[type="age"], form.configurar input[type="text"] 
+{
+    width: 100%;
+    margin: 0;
+    padding: 5px 10px;
+    background: 0;
+    border: 0;
+    border-bottom: 1px solid #BEBEBE;
+    outline: 0;
+    font-style: italic;
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+    color: #000000;
+    outline: 0;
+}
+
+form.login input[type="submit"], form.cadastrar input[type="submit"], form.configurar input[type="submit"]
+{
+    width: 100%;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-top: 16px;
+    outline: 0;
+    cursor: pointer;
+    letter-spacing: 1px;
+}
+
+form.login input[type="submit"]:hover, form.cadastrar input[type="submit"]
+{
+    transition: background-color 0.5s ease;
+}
+
+form.login label, form.login a, form.cadastrar label, form.cadastrar a
+{
+    font-size: 12px;
+    font-weight: 400;
+    color: #000000;
+}
+
+form.login a, form.cadastrar a
+{
+    transition: color 0.5s ease;
+}
+
+form.login a:hover, form.cadastrar a:hover
+{
+    color: #B22222;
+}
+
+.pr-wrap
+{
+    width: 100%;
+    height: 100%;
+    min-height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    display: none;
+}
+
+.show-pass-reset
+{
+    display: block !important;
+}
+
+.pass-reset
+{
+    margin: 0 auto;
+    width: 250px;
+    position: relative;
+    margin-top: 22%;
+    z-index: 999;
+    background: #000000;
+    padding: 20px 15px;
+}
+
+.pass-reset label
+{
+    font-size: 12px;
+    font-weight: 400;
+    margin-bottom: 15px;
+}
+
+.pass-reset input[type="email"]
+{
+    width: 100%;
+    margin: 5px 0 0 0;
+    padding: 5px 10px;
+    background: 0;
+    border: 0;
+    border-bottom: 1px solid #000000;
+    outline: 0;
+    font-style: italic;
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+    color: #000000;
+    outline: 0;
+}
+
+.pass-reset input[type="submit"]
+{
+    width: 100%;
+    border: 0;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-top: 10px;
+    outline: 0;
+    cursor: pointer;
+    letter-spacing: 1px;
+}
+
+.pass-reset input[type="submit"]:hover
+{
+    transition: background-color 0.5s ease;
+}
+.posted-by
+{
+    position: absolute;
+    bottom: 26px;
+    margin: 0 auto;
+    color: #B22222;
+    background-color: #B22222;
+    padding: 10px;
+    left: 45%;
+}
+
+.containerp{
+    margin-top: 250px;
+    margin-left: 70px;
+
+}
+
+
+
+/* The Notification body */
+
+.win8-notif-body{
+    position: fixed;
+    z-index: 3;
+    top:30%;
+    margin-top: 50px;
+    margin-left: 200px;
+    text-align: left;
+    min-height: 20%;
+    padding: 30px 10% 30px 5%;
+    font-family: sans-serif;
+    background-color: rgb(50, 179, 106);
+    color:white;
+}
+
+
+.win8-notif-body h3{
+    font-size: 1.5em;
+}
+
+
+.win8-notifiy-body p{
+    font-size: 1em;
+}
+
+.win8-notif-button{
+    border: solid 2px white;
+    padding: 10px;
+    min-width: 10%;
+    display: block;
+    margin-top: 2%;
+    margin-left: 2%;
+    float: right;
+    font-weight: bold;
+    margin-bottom: 2%;
+    background-color: rgb(50, 179, 106);
+    cursor: pointer;
+    color: white;
+}
+
+
+.win8-notif-button:hover{
+    background-color: rgb(29, 92, 56);
+}
