@@ -1,4 +1,21 @@
-﻿
+<?php
+$host = "localhost";
+$user = "root";
+$pass = "";
+$banco = "cadastro";
+$conexao = mysql_connect($host, $user, $pass) or die(mysql_error());
+mysql_select_db($banco) or die(mysql_error());
+?>
+<?php
+  session_start();
+  if(!isset($_SESSION["nome"]) || !isset($_SESSION["senha"])){
+      header("Location: index.php");
+      exit;
+  }
+ 
+?>
+
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -48,70 +65,8 @@
                 </div><!-- /.nav-collapse -->
              </div><!-- /.container -->
         </nav><!-- /.navbar -->
-		<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
 
-        <div class="row" id="bb">
-  <div class="col-sm-2 ">
-    <div class="thumbnail">
-      <img src="imagens/amarulaimg.jpg" alt="..." >
-      <div class="caption">
-        <h3>Amarula Caseira</h3>
-        <p>...</p>
-        <p><a href="amarula.php" class="pass-reset-submit btn btn-success btn-sm" role="button">Ver</a> </p>
-      </div>
-    </div>
-  </div>
-
-
- 
-  <div class="col-sm-2 ">
-    <div class="thumbnail">
-      <img src="imagens/ice.jpg" alt="..." >
-      <div class="caption">
-        <h3>Ice Caseira</h3>
-        <p>...</p>
-        <p><a href="ice.php" class="pass-reset-submit btn btn-success btn-sm" role="button">Ver</a> </p>
-      </div>
-    </div>
-  </div>
-
-
-
- 
-  <div class="col-sm-2 ">
-    <div class="thumbnail">
-      <img src="imagens/vinhoquente.jpg" alt="...">
-      <div class="caption">
-        <h3>Vinho Quente</h3>
-        <p>...</p>
-        <p><a href="vinhoquente.php" class="pass-reset-submit btn btn-success btn-sm" role="button">Ver</a> </p>
-      </div>
-    </div>
-  </div>
-
-
-
-  <div class="col-sm-2 ">
-    <div class="thumbnail">
-      <img src="imagens/quentao.jpg"  alt="..." >
-      <div class="caption">
-        <h3>Quentão</h3>
-        <p>...</p>
-        <p><a href="quentao.php" class="pass-reset-submit btn btn-success btn-sm" role="button">Ver</a> </p>
-      </div>
-    </div>
-  </div>
-</div>
+      
 
 </body>
 </html>

@@ -10,17 +10,16 @@ mysql_select_db($banco) or die(mysql_error());
 <!DOCTYPE html>
 <html>
 <head>
-   <link href="http://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
-    <script type="text/javascript" async="" src="http://www.google-analytics.com/ga.js"></script>
-    <script src="  http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <link href="css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <link href="css/logado.css" rel="stylesheet">
     <script src="../js/jquery-1.12.3.min.js"></script>
     <script src="../js/js.js" type="application/javascript"></script>
     <script type="text/javascript" src="../js/bootstrap.min.js"></script>
     <script src="../js/validator.js"></script>
-  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+
   <title>Relatório</title>
 </head>
 <body style="background-image: url(imagens/bebida2.jpg);">
@@ -28,66 +27,180 @@ mysql_select_db($banco) or die(mysql_error());
 <?php
 
 $vezes = mysql_query("SELECT * FROM bebcas WHERE id > 0 ") or die (mysql_error()) ;
+$v = mysql_query("SELECT * FROM registro WHERE id > 235 ") or die (mysql_error()) ;
 
 $vezes = mysql_num_rows($vezes);
+$v = mysql_num_rows($v);
 
 $amarula = 0;
 $ice = 0;
 $vquente = 0;
 $quentao = 0;
+$id = 1;
 
-for ($id=1; $id < $vezes+1 ; $id++) { 
-  $pontos = mysql_query("SELECT amarula FROM bebcas WHERE id = '$id' ") or die (mysql_error()) ;
-  $amarula += $pontos;
+$s = 236;
+$um=0;
+$dois=0;
+$tres=0;
+$quatro=0;
+$cinco=0;
 
-  $pontos = mysql_query("SELECT ice FROM bebcas WHERE id = '$id' ") or die (mysql_error()) ;
-  $ice += $pontos;
 
-  $pontos = mysql_query("SELECT vinhoquente FROM bebcas WHERE id = '$id' ") or die (mysql_error()) ;
-  $vquente += $pontos;
-
-  $pontos = mysql_query("SELECT quentao FROM bebcas WHERE id = '$id' ") or die (mysql_error()) ;
-  $quentao += $pontos;
-
-  $id += $id;
+for ($i=0; $i < $vezes ; $i++) { 
+  $pontos = mysql_query("SELECT * FROM bebcas WHERE id = '$id' ") or die (mysql_error()) ;
+  $linha = mysql_fetch_array($pontos);
+  $amarula += $linha['amarula'];
+  $ice+= $linha['ice'];
+  $vquente+= $linha['vinhoquente'];
+  $quentao+= $linha['quentao'];
+  $id++;
 }
 
-   function geraGrafico($largura, $altura, $valores, $referencias, $tipo = "p3"){
-           $valores = implode(',', $valores);
-           $referencias = implode('|', $referencias);
- 
-           return "http://chart.apis.google.com/chart?chs=". $largura ."x". $altura . "&amp;chd=t:" . $valores . "&amp;cht=p3&amp;chl=" . $referencias;
-     }
+for ($i=0; $i < $v ; $i++) { 
+$b = mysql_query("SELECT * FROM registro WHERE id= '$s'") or die (mysql_error()) ;
+  $li = mysql_fetch_array($b);
+  $p = $li['pontos'];
+    if ($p == 1) {
+      $um++;
+    }
+    else{
+      if ($p ==2) {
+        $dois++;
+      }
+      else{
+      if ($p ==3) {
+        $tres++;
+      }
+      else{
+      if ($p ==4) {
+        $quatro++;
+      }
+      else{
+      if ($p ==5) {
+        $cinco++;
+      }
+    }
+  }
+}
+}
+$s++;
+}
 
-     $grafico = geraGrafico(500, 200, array($amarula,$ice,$vquente,$quentao), array("Amarula", "Ice", "Vinho Quente", "Quentão")); 
-
-
-$id = 78;
+   
+$soma =0;
+$ide = 78;
 $sql = mysql_query("SELECT * FROM usuarios WHERE id > 77 ") or die (mysql_error()) ;
 
 $users = mysql_num_rows($sql);
 
-$soma = 0;
 
 for ($i=0; $i < $users ; $i++) { 
-  $age = mysql_query("SELECT idade FROM usuarios WHERE id = '$id' ") or die (mysql_error()) ;
-  $soma += $age;
-  $id += $id;
+
+  $busca = mysql_query("SELECT * FROM usuarios WHERE id= '$ide'") or die (mysql_error()) ;
+  $linha = mysql_fetch_array($busca);
+  $age = $linha['idade'];
+  $soma+=$age;
+  $ide++;
+ 
 }
 
-
-$result = $soma/$users;
-
 ?>  
-  <br><br><br><br><br><br><br><br><p><h1>  Relatório</h1><p>
-  <p><br><h3>  Pontos por avaliação de Bebidas Caseiras</h3>
-    <br><div>
-    <img src="<?php echo $grafico ?>" title="Grafico gerado pelo Google Chart" />
-     <p><br><h3>  Perfil dos usuários (idade média)</h3>
-     <?php echo "   "?><?php echo $result+8?> <?php echo " anos"?>
+
+<br><br><br><br><br><br><br><br><br><br><br><br>
+<div id="chart_div" style="width: 700px; margin-left: 160px">
+  <script type="text/javascript" >
+  google.charts.load('current', {packages: ['corechart', 'bar']});
+  google.charts.setOnLoadCallback(drawBasic);
+
+function drawBasic() {
+
+      var data = google.visualization.arrayToDataTable([
+         ['Element', 'Pontos', { role: 'style' }],
+         ['Amarula',<?php echo($amarula); ?> , '#3366CC'],            // RGB value
+         ['Ice', <?php echo($ice); ?>, '#3366CC'],            // English color name
+         ['Quentão',<?php echo($quentao); ?> , '#3366CC'],
+         ['Vinho Quente', <?php echo($vquente); ?>, '#3366CC' ], // CSS-style declaration
+      ]);
+
+      var options = {
+        title: 'Avaliação de Bebidas Caseiras',
+        hAxis: {
+          title: 'Bebidas Caseiras',
+        },
+        vAxis: {
+          title: 'Pontos (nº de estrelas)'
+        }
+      };
+
+      var chart = new google.visualization.ColumnChart(
+        document.getElementById('chart_div'));
+
+      chart.draw(data, options);
+    }
+  </script>
+</div>
+
+<br><br>
+<div class="col-sm-4">
+   <table class="table" style="width: 300px; margin-left:200px">
+      <thead>
+        <h3 style="margin-left: 180px">Avaliação da Ferramenta</h3>
+        <br>
+        <tr>
+          <th>Estrelas</th>
+          <th>Votos</th>
+          <th style="width: 36px;"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td><?php echo($um); ?></td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td><?php echo($dois); ?></td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td><?php echo($tres); ?></td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td><?php echo($quatro); ?></td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td><?php echo($cinco); ?></td>
+        </tr>
+      </tbody>
+    </table>
+</div>
+
+
+<div class="col-sm-4">
+   <table class="table" style="width: 300px; margin-left:200px">
+      <thead>
+        <h3 style="margin-left: 180px">Perfil dos Usuários</h3>
+        <br>
+        <tr>
+          <th>Quantidade de usuários</th>
+          <th>Idade média</th>
+          <th style="width: 36px;"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><?php echo($users); ?> </td>
+          <td><?php echo($soma/$users); ?> </td>
+        </tr>
+      </tbody>
+    </table>
+
 
 
 </div>
+
 </body>
 </html>
 

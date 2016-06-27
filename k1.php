@@ -1,4 +1,35 @@
-﻿
+<?php
+$host = "localhost";
+$user = "root";
+$pass = "";
+$banco = "cadastro";
+$conexao = mysql_connect($host, $user, $pass) or die(mysql_error());
+mysql_select_db($banco) or die(mysql_error());
+?>
+<?php
+  session_start();
+  if(!isset($_SESSION["nome"]) || !isset($_SESSION["senha"])){
+      header("Location: index.php");
+      exit;
+  }
+ 
+?>
+<script type="text/javascript">
+function successfully(){
+      setTimeout("window.location='ACFKiwi.php'");
+    }
+</script>
+
+<?php
+  $num=1;
+
+  $sql = mysql_query("INSERT INTO drinks (kiwi) VALUES ('$num')");
+
+  if ($sql) {
+  echo "<script>successfully()</script>";
+  }
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -15,7 +46,7 @@
     
   </head>
        
-      <body style="background-image: url(imagens/bebida3.jpg);">
+      <body style="background-image:url(imagens/pagACFKiwi.jpg);">
 
            <nav id="header" class="navbar navbar-fixed-top">
               <div id="header-container" class="container navbar-container">
@@ -48,70 +79,46 @@
                 </div><!-- /.nav-collapse -->
              </div><!-- /.container -->
         </nav><!-- /.navbar -->
-		<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-
-        <div class="row" id="bb">
-  <div class="col-sm-2 ">
-    <div class="thumbnail">
-      <img src="imagens/amarulaimg.jpg" alt="..." >
-      <div class="caption">
-        <h3>Amarula Caseira</h3>
-        <p>...</p>
-        <p><a href="amarula.php" class="pass-reset-submit btn btn-success btn-sm" role="button">Ver</a> </p>
-      </div>
-    </div>
+<div id="beb">
+<div class="container" id="msg">
+  <div class="row">
+      <div class="col-sm-6 ">
+        <div class="well well-sm">
+          <form class="form-horizontal" action="kiwenvi.php" method="post">
+          <fieldset>
+            <legend class="text-center">Deixe seu comentário:</legend>
+    
+            <!-- Message body -->
+            <div class="form-group">
+             <div class="col-md-9">
+                <textarea class="form-control" id="message" name="mensagem" placeholder="Comente aqui..." rows="5"></textarea>
+              </div>
+            </div>
+                 <!-- Form actions -->
+            <div class="form-group">
+              <div class="col-md-12 text-right" >
+                <input type="submit" class="btn btn-success btn-sm" value="Enviar"/>  
+              </div>
+            </div>
+          
+      <form class="stars">
+            Avalie essa receita:
+        <div >
+            <a name="1" href="que1.php"><span class="glyphicon glyphicon-star" aria-hidden="true"></span></a>
+            <a name="2" href="que2.php"><span class="glyphicon glyphicon-star" aria-hidden="true"></span></a>
+            <a name="3" href="que3.php"><span class="glyphicon glyphicon-star" aria-hidden="true"></span></a>
+            <a name="4" href="que4.php"><span class="glyphicon glyphicon-star" aria-hidden="true"></span></a>
+            <a name="5" href="que5.php"><span class="glyphicon glyphicon-star" aria-hidden="true"></span></a>
+        </div>         
+      </form>
+    </fieldset>
+  </form>
   </div>
-
-
- 
-  <div class="col-sm-2 ">
-    <div class="thumbnail">
-      <img src="imagens/ice.jpg" alt="..." >
-      <div class="caption">
-        <h3>Ice Caseira</h3>
-        <p>...</p>
-        <p><a href="ice.php" class="pass-reset-submit btn btn-success btn-sm" role="button">Ver</a> </p>
-      </div>
-    </div>
-  </div>
-
-
-
- 
-  <div class="col-sm-2 ">
-    <div class="thumbnail">
-      <img src="imagens/vinhoquente.jpg" alt="...">
-      <div class="caption">
-        <h3>Vinho Quente</h3>
-        <p>...</p>
-        <p><a href="vinhoquente.php" class="pass-reset-submit btn btn-success btn-sm" role="button">Ver</a> </p>
-      </div>
-    </div>
-  </div>
-
-
-
-  <div class="col-sm-2 ">
-    <div class="thumbnail">
-      <img src="imagens/quentao.jpg"  alt="..." >
-      <div class="caption">
-        <h3>Quentão</h3>
-        <p>...</p>
-        <p><a href="quentao.php" class="pass-reset-submit btn btn-success btn-sm" role="button">Ver</a> </p>
-      </div>
-    </div>
-  </div>
+ </div>
 </div>
+</div>
+</div>
+      
 
 </body>
 </html>

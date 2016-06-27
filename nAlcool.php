@@ -1,4 +1,3 @@
-﻿
 <!DOCTYPE html>
 <html>
     <head>
@@ -60,27 +59,27 @@
 <br>
 <br>
 
-        <div class="row" id="bb">
-  <div class="col-sm-2 ">
+<div class="row" id="bb">
+  <div class="col-sm-3 ">
     <div class="thumbnail">
-      <img src="imagens/amarulaimg.jpg" alt="..." >
+      <img src="imagens/Baby_Bellini.jpg" width="170px" >
       <div class="caption">
-        <h3>Amarula Caseira</h3>
-        <p>...</p>
-        <p><a href="amarula.php" class="pass-reset-submit btn btn-success btn-sm" role="button">Ver</a> </p>
+        <h3>Baby Bellini</h3>
+ 
+        <p><a href="NABabyBellini.php" class="pass-reset-submit btn btn-success btn-sm" role="button">Ver</a> </p>
       </div>
     </div>
   </div>
 
 
  
-  <div class="col-sm-2 ">
+  <div class="col-sm-3 ">
     <div class="thumbnail">
-      <img src="imagens/ice.jpg" alt="..." >
+      <img src="imagens/Candy.jpg" width="170px" >
       <div class="caption">
-        <h3>Ice Caseira</h3>
-        <p>...</p>
-        <p><a href="ice.php" class="pass-reset-submit btn btn-success btn-sm" role="button">Ver</a> </p>
+        <h3>Candy</h3>
+   
+        <p><a href="NACandy.php" class="pass-reset-submit btn btn-success btn-sm" role="button">Ver</a> </p>
       </div>
     </div>
   </div>
@@ -88,26 +87,41 @@
 
 
  
-  <div class="col-sm-2 ">
+  <div class="col-sm-3 ">
     <div class="thumbnail">
-      <img src="imagens/vinhoquente.jpg" alt="...">
+      <img src="imagens/Coquetel_de_Laranja.jpg" width="170px">
       <div class="caption">
-        <h3>Vinho Quente</h3>
-        <p>...</p>
-        <p><a href="vinhoquente.php" class="pass-reset-submit btn btn-success btn-sm" role="button">Ver</a> </p>
+        <h3>Coquetel de Laranja</h3>
+
+        <p><a href="NACoqueteldeLaranja.php" class="pass-reset-submit btn btn-success btn-sm" role="button">Ver</a> </p>
+      </div>
+    </div>
+  </div>
+  </div>
+
+
+
+<div class="row" id="bbb">
+  <div class="col-sm-3 ">
+    <div class="thumbnail">
+      <img src="imagens/Raspadinha_de_Abacaxi.jpg"  width="170px" >
+      <div class="caption">
+        <h3>Raspadinha de Abacaxi</h3>
+
+        <p><a href="NARaspadinhadeAbacaxi.php" class="pass-reset-submit btn btn-success btn-sm" role="button">Ver</a> </p>
       </div>
     </div>
   </div>
 
 
 
-  <div class="col-sm-2 ">
+<div class="col-sm-3 ">
     <div class="thumbnail">
-      <img src="imagens/quentao.jpg"  alt="..." >
+      <img src="imagens/Sensations.jpg" width="170px" >
       <div class="caption">
-        <h3>Quentão</h3>
-        <p>...</p>
-        <p><a href="quentao.php" class="pass-reset-submit btn btn-success btn-sm" role="button">Ver</a> </p>
+        <h3>Sensations</h3>
+        <br>
+        <p><a href="NASensations.php" class="pass-reset-submit btn btn-success btn-sm" role="button">Ver</a> </p>
       </div>
     </div>
   </div>

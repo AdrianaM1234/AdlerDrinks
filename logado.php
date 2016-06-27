@@ -20,8 +20,10 @@ mysql_select_db($banco) or die(mysql_error());
     <head>
   
     <link href="http://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
-    <script type="text/javascript" async="" src="http://www.google-analytics.com/ga.js"></script>
-    <script src="  http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/star-rating.css" media="all" rel="stylesheet" type="text/css">
+    <script type="text/javascript" async="" src="http://www.google-analytics.com/ga.js"></script><script src="  http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script><style type="text/css"></style>
+    <script src="js/star-rating.js" type="text/javascript"></script>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <link href="css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <link href="css/logado.css" rel="stylesheet">
@@ -73,17 +75,26 @@ mysql_select_db($banco) or die(mysql_error());
       <div class="col-sm-6">
       <div class="menu">
       <ul class="nav navbar-nav">
-        <li class="dropdown open">
+        <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-glass"></span>      RECEITAS</a>
           <ul class="dropdown-menu">
             <li><a href="bCaseiras.php"><span class="glyphicon glyphicon-glass"></span>    Bebidas Caseiras </a></li>
             <li class="divider"></li>
             <li class="dropdown open"><a href="#"> <span class="glyphicon glyphicon-glass"></span>    Drinks</a>
                 <ul class="dropdown-menu">
-                <li><a href="alcool.php"><span class="glyphicon glyphicon-glass"></span>    Alcóolicos </a></li>
-                <li class="divider"></li>
-                <li><a href="nAlcool.php"><span class="glyphicon glyphicon-glass"></span>    Não Alcóolicos </a>
+                <li><a href="nAlcool.php"><span class="glyphicon glyphicon-glass"></span>    Não Alcoólicos </a>
                 </li>
+                <li class="divider"></li>
+                <li class="dropdown open"><a href="#"><span class="glyphicon glyphicon-glass"></span>    Alcoólicos </a>
+                <ul class="dropdown-menu">
+                <li><a href="cfrut.php"><span class="glyphicon glyphicon-glass"></span>    Com Frutas </a>
+                </li>
+                <li class="divider"></li>
+                <li><a href="sfrut.php"><span class="glyphicon glyphicon-glass"></span>    Sem Frutas </a></li>
+                
+                </ul>
+                </li>
+                
                 </ul>
                 </li>
                      
@@ -91,18 +102,29 @@ mysql_select_db($banco) or die(mysql_error());
         </li>
       </ul>
       </div>
+<script src='http://code.jquery.com/jquery-2.1.3.min.js'></script>
+<script src='//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js'></script>
+<script>
+  $(function () {
+    $('.dropdown-toggle').dropdown();
+  }); 
+</script>
+
+
+
 
       <form class="stars">
-            Avalie nossa ferramenta:
+            Avalie essa receita:
         <div >
             <a name="1" href="estrela1.php"><span class="glyphicon glyphicon-star" aria-hidden="true"></span></a>
             <a name="2" href="estrela2.php"><span class="glyphicon glyphicon-star" aria-hidden="true"></span></a>
             <a name="3" href="estrela3.php"><span class="glyphicon glyphicon-star" aria-hidden="true"></span></a>
             <a name="4" href="estrela4.php"><span class="glyphicon glyphicon-star" aria-hidden="true"></span></a>
             <a name="5" href="estrela5.php"><span class="glyphicon glyphicon-star" aria-hidden="true"></span></a>
-        </div>
-         
+        </div>         
       </form>
+
+
 </div>
   </body>
   </html>
